@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from pearldgs_toolbox import pearl_dgs  # adjust to real module name
 
 app = FastAPI()
+
 
 class PearlInputs(BaseModel):
     al_mm: float
@@ -16,13 +16,15 @@ class PearlInputs(BaseModel):
     iol_constant: float
     iol_model: str
 
+
 class PearlResult(BaseModel):
     theoretical_power_d: float
     selected_power_d: float
 
+
 @app.post("/pearl-sphere", response_model=PearlResult)
 def compute_pearl(inputs: PearlInputs):
-    # TODO: replace this with the actual PEARL-DGS call using pearl_dgs_toolbox
+    # TODO: replace this placeholder with a real PEARL-DGS call later
     power = 0.0
     return PearlResult(
         theoretical_power_d=power,
