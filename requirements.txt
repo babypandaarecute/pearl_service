@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+pandas
+numpy
+scikit-learn
+git+https://github.com/gdebel/pearldgs_toolbox.git
